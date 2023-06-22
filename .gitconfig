@@ -1,11 +1,11 @@
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 [pager]
-	branch = false
+    branch = false
 [alias]
-	tree = log --decorate --graph --oneline
-	co = checkout
-	st = status
+    tree = log --decorate --graph --oneline
+    co = checkout
+    st = status
     rp = remote prune origin
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
