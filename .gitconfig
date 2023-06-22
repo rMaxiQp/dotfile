@@ -1,6 +1,7 @@
 [alias]
     co = checkout
     git = !exec git
+    br = branch
     rp = remote prune origin
     st = status
     tree = log --decorate --graph --oneline

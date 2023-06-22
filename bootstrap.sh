@@ -25,18 +25,21 @@ echo "Installing packages from .brew..."
 cat $DOTFILES_DIR/.brew | xargs brew install
 
 # Install oh-my-zsh
-echo "Installing oh-my-zsh"
+echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ~/.zshrc ~/.zshrc.bak
 cp $DOTFILES_DIR/.zshrc ~/.zshrc
 chsh -s $(which zsh)
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 
 # Install Vundle
+echo "Installing Vundle..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ~/.vimrc ~/.vimrc.bak
 cp $DOTFILES_DIR/.vimrc ~/.vimrc
 vim +PluginInstall +qall
 
 # Update Git config
+echo "Updating Git config..."
 cp ~/.gitconfig ~/.gitconfig.bak
 cp $DOTFILES_DIR/.gitconfig ~/.gitconfig
