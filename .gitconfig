@@ -1,11 +1,34 @@
+[alias]
+    co = checkout
+    git = !exec git
+    rp = remote prune origin
+    st = status
+    tree = log --decorate --graph --oneline
+    undo = reset HEAD~
+[checkout]
+    defaultRemote = origin
+[fetch]
+    prune = true
+[help]
+    autocorrect = 1
+[include]
+    path = ~/.gitconfig.local
+[log]
+    data = human
+    decorate = short
+    graph = true
+[pull]
+    default = current
+    ff = only
+    rebase = true
 [push]
     autoSetupRemote = true
+    default = current
 [pager]
     branch = false
-[alias]
-    tree = log --decorate --graph --oneline
-    co = checkout
-    st = status
-    rp = remote prune origin
+[stash]
+    showPatch = true
 [url "git@github.com:"]
     insteadOf = https://github.com/
+[url "git://gist.github.com"]
+    insteadOf = "gist:"
